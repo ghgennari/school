@@ -1,0 +1,37 @@
+<div class="container bg-light p-4">
+    <div class="row">
+        <div class="col-7 m-auto">
+            <h1 class="text-center">Cadastro de alunos</h1>
+            <form>
+                <div class="mb-3">
+                  <label for="InputName" class="form-label">Nome</label>
+                  <input type="text" class="form-control" id="InputName" aria-describedby="NameHelp">
+                  <div id="NameHelp" class="form-text">Digite o seu nome.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="InputCourse" class="form-label">Curso</label>
+                    <input type="text" class="form-control" id="InputCourse" aria-describedby="CourseHelp">
+                    <div id="CourseHelp" class="form-text">Digite o seu curso.</div>
+                  </div>
+                <button type="submit" class="btn btn-primary">Salvar</button>
+              </form>
+
+              <h2>Alunos Cadastrados</h2>
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Curso</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let s of students">
+                    <th scope="row">{{this.students}}</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+</div>
