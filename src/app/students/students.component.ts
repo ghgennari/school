@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DadosService } from '../dados.service';
+import { Student } from '../student';
 
 @Component({
   selector: 'app-students',
