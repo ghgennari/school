@@ -17,7 +17,7 @@ export class StudentsComponent implements OnInit {
   ngOnInit(): void {
       this.service.getStudents().subscribe({
         next: json => this.students = json
-      })
+      });
   }
 
 

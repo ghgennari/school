@@ -27,9 +27,9 @@
                 </thead>
                 <tbody>
                   <tr *ngFor="let s of students">
-                    <th scope="row">{{this.students}}</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
+                    <th scope="row">{{s.id}}</th>
+                    <td>{{s.name}}</td>
+                    <td>{{s.course}}</td>
                   </tr>
                 </tbody>
               </table>
