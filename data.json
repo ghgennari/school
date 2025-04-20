@@ -24,6 +24,27 @@
       "id": 5,
       "name": "Ryan",
       "course": "Computaria"
+    },
+    {
+      "id": 6,
+      "name": "Maria",
+      "course": "Escola"
+    }
+  ],
+  "courses": [
+    {
+      "id": 1,
+      "name": "sistema de informacao",
+      "price": "R$750",
+      "active": true,
+      "promotion": false
+    },
+    {
+      "id": 2,
+      "name": "ADS",
+      "price": "R$450",
+      "active": true,
+      "promotion": false
     }
   ]
 }
