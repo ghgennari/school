@@ -15,7 +15,7 @@ export class CoursesComponent implements OnInit {
   formGroupCourse: FormGroup;
 
   constructor(private service: DadosService,
-              private formBuilder: FormBuilder
+    private formBuilder: FormBuilder
   ){
     this.formGroupCourse = formBuilder.group({
       id: [''],
@@ -23,6 +23,12 @@ export class CoursesComponent implements OnInit {
       price: [''],
       active: [false],
       promotion: [false],
+    });
+  }
+
+  ngOnInit(): void {
+    this.service.getCourses().subscribe({
+      next: json => this.courses = json
     });
   }
 }

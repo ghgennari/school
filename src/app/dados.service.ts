@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Student } from './student';
+import { Course } from './course';
 
 @Injectable({
   providedIn: 'root'
@@ -17,5 +18,9 @@ export class DadosService {
 
   saveStudent(student: Student): Observable<Student>{
     return this.http.post<Student>(this.apiUrl, student);
+  }
+
+  getCourses(): Observable<Course[]>{
+    return this.http.get<Course[]>(this.apiUrl);
   }
 }
