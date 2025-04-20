@@ -33,11 +33,11 @@
                 </div>
                 <div id="promotion" class="form-check mb-3">
                     <input class="form-check-input" type="checkbox" [value]="true" id="promotion">
-                    <label class="form-check-label" for="checkDefault">
+                    <label class="form-check-label" for="promotion">
                       Promoção
                     </label>
                   </div>
-                <button type="submit" class="btn btn-primary">Salvar</button>
+                <button type="submit" class="btn btn-primary" (click)="save()">Salvar</button>
               </form>
 
               <h2>Cursos Cadastrados</h2>
@@ -45,14 +45,19 @@
                 <thead>
                   <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">Nome</th>
                     <th scope="col">Curso</th>
+                    <th scope="col">Preço</th>
+                    <th scope="col">Ativo</th>
+                    <th scope="col">Promoção</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let s of courses">
                     <th scope="row">{{s.id}}</th>
                     <td>{{s.name}}</td>
+                    <td>{{s.price}}</td>
+                    <td>{{s.active ? 'Sim' : 'Não'}}</td>
+                    <td>{{s.promotion ? 'Sim' : 'Não'}}</td>
                   </tr>
                 </tbody>
               </table>

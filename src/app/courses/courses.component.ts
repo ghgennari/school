@@ -31,4 +31,15 @@ export class CoursesComponent implements OnInit {
       next: json => this.courses = json
     });
   }
+
+  save(){
+    this.service.saveCourse(this.formGroupCourse.value).subscribe(
+      {
+        next: json =>{
+          this.courses.push(json);
+          this.formGroupCourse.reset();
+        }
+      }
+    )
+  }
 }

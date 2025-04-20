@@ -45,6 +45,27 @@
       "price": "R$450",
       "active": true,
       "promotion": false
+    },
+    {
+      "id": 3,
+      "name": "teste",
+      "price": "teste",
+      "active": false,
+      "promotion": false
+    },
+    {
+      "id": 4,
+      "name": "promocao",
+      "price": "promocao",
+      "active": false,
+      "promotion": false
+    },
+    {
+      "id": 5,
+      "name": "check",
+      "price": "check",
+      "active": true,
+      "promotion": null
     }
   ]
 }

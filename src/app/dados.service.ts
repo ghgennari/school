@@ -9,6 +9,7 @@ import { Course } from './course';
 })
 export class DadosService {
   apiUrl = "http://localhost:3000/students"
+  apiUrlCourses = "http://localhost:3000/courses"
 
   constructor(private http: HttpClient) {}
 
@@ -19,8 +20,11 @@ export class DadosService {
   saveStudent(student: Student): Observable<Student>{
     return this.http.post<Student>(this.apiUrl, student);
   }
-
+  
   getCourses(): Observable<Course[]>{
-    return this.http.get<Course[]>(this.apiUrl);
+    return this.http.get<Course[]>(this.apiUrlCourses);
+  }
+  saveCourse(course: Course): Observable<Course>{
+    return this.http.post<Course>(this.apiUrlCourses, course);
   }
 }
