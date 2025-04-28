@@ -14,21 +14,6 @@
       "id": 3,
       "name": "Marcia antunes",
       "course": "Matematica"
-    },
-    {
-      "id": 4,
-      "name": "teste",
-      "course": "teste"
-    },
-    {
-      "id": 5,
-      "name": "Ryan",
-      "course": "Computaria"
-    },
-    {
-      "id": 6,
-      "name": "Maria",
-      "course": "Escola"
     }
   ],
   "courses": [
@@ -45,27 +30,6 @@
       "price": "R$450",
       "active": true,
       "promotion": false
-    },
-    {
-      "id": 3,
-      "name": "teste",
-      "price": "teste",
-      "active": false,
-      "promotion": false
-    },
-    {
-      "id": 4,
-      "name": "promocao",
-      "price": "promocao",
-      "active": false,
-      "promotion": false
-    },
-    {
-      "id": 5,
-      "name": "check",
-      "price": "check",
-      "active": true,
-      "promotion": null
     }
   ]
 }
