@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { DadosService } from '../dados.service';
 import { Course } from '../course';
+import { CourseService } from '../course.service';
 
 @Component({
   selector: 'app-courses',
@@ -14,7 +14,7 @@ export class CoursesComponent implements OnInit {
   courses: Course[] = [];
   formGroupCourse: FormGroup;
 
-  constructor(private service: DadosService,
+  constructor(private service: CourseService,
     private formBuilder: FormBuilder
   ){
     this.formGroupCourse = formBuilder.group({

@@ -1,21 +1,5 @@
 {
-  "students": [
-    {
-      "id": 1,
-      "name": "Jose Maria",
-      "course": "Computacao"
-    },
-    {
-      "id": 2,
-      "name": "Fernando Silva",
-      "course": "Computacao"
-    },
-    {
-      "id": 3,
-      "name": "Marcia antunes",
-      "course": "Matematica"
-    }
-  ],
+  "students": [],
   "courses": [
     {
       "id": 1,
@@ -30,6 +14,13 @@
       "price": "R$450",
       "active": true,
       "promotion": false
+    },
+    {
+      "id": 3,
+      "name": "GTI",
+      "price": "500",
+      "active": false,
+      "promotion": true
     }
   ]
 }

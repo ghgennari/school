@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DadosService } from '../dados.service';
 import { Student } from '../student';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { StudentService } from '../student.service';
 
 @Component({
   selector: 'app-students',
@@ -14,7 +14,7 @@ export class StudentsComponent implements OnInit {
   students: Student[] = [];
   formGroupStudent: FormGroup;
   
-  constructor(private service: DadosService,
+  constructor(private service: StudentService,
     private formBuilder: FormBuilder
   ){
     this.formGroupStudent = formBuilder.group({
@@ -25,19 +25,33 @@ export class StudentsComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    this.service.getStudents().subscribe({
+    this.loadStudent();
+  }
+
+  loadStudent(){
+    this.service.getAll().subscribe({
       next: json => this.students = json
     });
   }
   
   save() {
-    this.service.saveStudent(this.formGroupStudent.value).subscribe(
+    this.service.save(this.formGroupStudent.value).subscribe(
       {
-          next: json => {
-            this.students.push(json);
-            this.formGroupStudent.reset();
-          }
+        next: json => {
+          this.students.push(json);
+          this.formGroupStudent.reset();
+        }
       }
     )
   }
+  
+  delete(student: Student) {
+    this.service.delete(student).subscribe(
+      {
+        next: () => this.loadStudent()
+      }
+    )
+  
+  }
+
 }
