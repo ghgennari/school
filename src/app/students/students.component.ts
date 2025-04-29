@@ -10,9 +10,11 @@ import { StudentService } from '../student.service';
   styleUrl: './students.component.css'
 })
 export class StudentsComponent implements OnInit {
+
   
   students: Student[] = [];
   formGroupStudent: FormGroup;
+  isEditing: boolean = false;
   
   constructor(private service: StudentService,
     private formBuilder: FormBuilder
@@ -27,7 +29,7 @@ export class StudentsComponent implements OnInit {
   ngOnInit(): void {
     this.loadStudent();
   }
-
+  
   loadStudent(){
     this.service.getAll().subscribe({
       next: json => this.students = json
@@ -51,7 +53,26 @@ export class StudentsComponent implements OnInit {
         next: () => this.loadStudent()
       }
     )
-  
   }
 
+  onClickUpdate(student: Student) {
+    this.isEditing = true;
+    this.formGroupStudent.setValue(student);
+  }
+
+  update() {
+    this.service.update(this.formGroupStudent.value).subscribe({
+      next: () => {
+        this.loadStudent();
+        this.clear();
+      }
+    }
+    )
+  }
+
+  clear() {
+    this.isEditing = false;
+    this.formGroupStudent.reset();
+  }
+  
 }

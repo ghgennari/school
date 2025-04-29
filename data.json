@@ -1,5 +1,21 @@
 {
-  "students": [],
+  "students": [
+    {
+      "id": 2,
+      "name": "Ryan Torres",
+      "course": "Computaria"
+    },
+    {
+      "id": 3,
+      "name": "Nicolas Ze",
+      "course": "Roblox"
+    },
+    {
+      "id": 4,
+      "name": "Walsin",
+      "course": "Militarismo"
+    }
+  ],
   "courses": [
     {
       "id": 1,
