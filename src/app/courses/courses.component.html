@@ -37,7 +37,9 @@
                       Promoção
                     </label>
                   </div>
-                <button type="submit" class="btn btn-primary" (click)="save()">Salvar</button>
+                <button *ngIf="!isEditing" class="btn btn-primary" (click)="save()">Salvar</button>
+                <button *ngIf="isEditing" class="btn btn-success" (click)="update()">Atualizar</button>
+                <button class="btn btn-danger ms-1" (click)="clear()">Cancelar</button>
               </form>
 
               <h2>Cursos Cadastrados</h2>
@@ -49,15 +51,19 @@
                     <th scope="col">Preço R$</th>
                     <th scope="col">Ativo?</th>
                     <th scope="col">Promoção?</th>
+                    <th scope="col">Alterar</th>
+                    <th scope="col">Remover</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let s of courses">
-                    <th scope="row">{{s.id}}</th>
-                    <td>{{s.name}}</td>
-                    <td>{{s.price}}</td>
-                    <td>{{s.active ? 'Sim' : 'Não'}}</td>
-                    <td>{{s.promotion ? 'Sim' : 'Não'}}</td>
+                  <tr *ngFor="let c of courses">
+                    <th scope="row">{{c.id}}</th>
+                    <td>{{c.name}}</td>
+                    <td>{{c.price}}</td>
+                    <td>{{c.active ? 'Sim' : 'Não'}}</td>
+                    <td>{{c.promotion ? 'Sim' : 'Não'}}</td>
+                    <td><button class="btn btn-primary" (click)="clickUpdate(c)">Alterar</button></td>
+                    <td><button class="btn btn-danger" (click)="delete(c)">Remover</button></td>
                   </tr>
                 </tbody>
               </table>

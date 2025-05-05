@@ -13,6 +13,7 @@ export class CoursesComponent implements OnInit {
 
   courses: Course[] = [];
   formGroupCourse: FormGroup;
+  isEditing: boolean = false;
 
   constructor(private service: CourseService,
     private formBuilder: FormBuilder
@@ -32,6 +33,12 @@ export class CoursesComponent implements OnInit {
     });
   }
 
+  loadCourse(){
+    this.service.getCourses().subscribe({
+      next: json => this.courses = json
+    });
+  }
+
   save(){
     this.service.saveCourse(this.formGroupCourse.value).subscribe(
       {
@@ -42,4 +49,33 @@ export class CoursesComponent implements OnInit {
       }
     )
   }
+
+  delete(course: Course) {
+    this.service.delete(course).subscribe(
+      {
+        next: () =>this.loadCourse()
+      }
+    )
+  }
+
+  clickUpdate(course: Course){
+    this.isEditing = true;
+    this.formGroupCourse.setValue(course);
+  }
+
+  update(){
+    this.service.update(this.formGroupCourse.value).subscribe({
+      next: () =>{
+        this.loadCourse();
+        this.clear();
+      }
+    })
+  }
+
+  clear(){
+    this.isEditing = false;
+    this.formGroupCourse.reset();
+  }
+
 }
+

@@ -66,8 +66,7 @@ export class StudentsComponent implements OnInit {
         this.loadStudent();
         this.clear();
       }
-    }
-    )
+    })
   }
 
   clear() {
